@@ -2,55 +2,52 @@
   <ion-page>
     <ion-header :translucent="true">
       <ion-toolbar>
-        <ion-title>Blank</ion-title>
+        <ion-title>Cryptocurrency</ion-title>
       </ion-toolbar>
     </ion-header>
 
     <ion-content :fullscreen="true">
       <ion-header collapse="condense">
         <ion-toolbar>
-          <ion-title size="large">Blank</ion-title>
+          <ion-title size="large">Cryptocurrency</ion-title>
         </ion-toolbar>
       </ion-header>
-
       <div id="container">
-        <strong>Ready to create an app?</strong>
-        <p>Start with Ionic <a target="_blank" rel="noopener noreferrer" href="https://ionicframework.com/docs/components">UI Components</a></p>
+        <h1>CRYPTOCURRENCY APPLICATION</h1>
+        <p>Explore the best cryptocurrencies to invest in.</p>
+        <div class="container-table">
+          <Table />
+        </div>
       </div>
     </ion-content>
   </ion-page>
 </template>
 
 <script setup lang="ts">
-import { IonContent, IonHeader, IonPage, IonTitle, IonToolbar } from '@ionic/vue';
+import {
+  IonContent,
+  IonHeader,
+  IonPage,
+  IonTitle,
+  IonToolbar,
+} from "@ionic/vue";
+import Table from "@/components/Table.vue";
 </script>
 
 <style scoped>
 #container {
+  margin-top: 28dvh;
   text-align: center;
-  
-  position: absolute;
-  left: 0;
-  right: 0;
-  top: 50%;
-  transform: translateY(-50%);
-}
+  padding-inline: clamp(1rem, 4.286vw + 0.143rem, 4rem);
 
-#container strong {
-  font-size: 20px;
-  line-height: 26px;
-}
+  div {
+    margin-top: 4rem;
+  }
 
-#container p {
-  font-size: 16px;
-  line-height: 22px;
-  
-  color: #8c8c8c;
-  
-  margin: 0;
-}
-
-#container a {
-  text-decoration: none;
+  h1 {
+    font-weight: 900;
+    font-size: xx-large;
+    color: var(--ion-color-primary);
+  }
 }
 </style>
