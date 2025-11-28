@@ -6,7 +6,7 @@
       </ion-toolbar>
     </ion-header>
 
-    <ion-content :fullscreen="true">
+    <ion-content :fullscreen="true" fixed-slot-placement="before">
       <ion-header collapse="condense">
         <ion-toolbar>
           <ion-title size="large">Cryptocurrency</ion-title>
@@ -19,6 +19,7 @@
           <Table />
         </div>
       </div>
+      <FloatingButton/>
     </ion-content>
   </ion-page>
 </template>
@@ -32,6 +33,7 @@ import {
   IonToolbar,
 } from "@ionic/vue";
 import Table from "@/components/Table.vue";
+import FloatingButton from "@/components/FloatingButton.vue";
 </script>
 
 <style scoped>

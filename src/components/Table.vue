@@ -15,7 +15,7 @@
       </ion-col>
     </ion-row>
   </ion-grid>
-  <ion-infinite-scroll @ionInfinite="loadMore" treshold="100px">
+  <ion-infinite-scroll @ionInfinite="loadMore" threshold="100px">
     <ion-infinite-scroll-content></ion-infinite-scroll-content>
   </ion-infinite-scroll>
 </template>
@@ -31,8 +31,7 @@ import {
   InfiniteScrollCustomEvent,
 } from "@ionic/vue";
 
-interface cryptoItem {
-  //interface for crypto data item
+interface cryptoItem { //interface for crypto data item
   id: string;
   rank: number;
   name: string;
@@ -41,14 +40,13 @@ interface cryptoItem {
 }
 
 const cryptoData = ref<cryptoItem[]>([]); //main storage for crypto data
-const APIURL :string= "https://api.coinlore.net/api/tickers/"; //api url
-const dataOnDisplay= ref<cryptoItem[]>([]); //data displayed on the screen
-const pageSize :number = 10; //number of data to load per scroll
+const APIURL: string = "https://api.coinlore.net/api/tickers/"; //api url
+const dataOnDisplay = ref<cryptoItem[]>([]); //data displayed on the screen
+const pageSize: number = 10; //number of data to load per scroll
 
 ///// Fetch Crypto Data /////
 
-onMounted(async () => {
-  //fetch crypto data on component mount
+onMounted(async () => { //fetch crypto data
   try {
     const response = await fetch(APIURL);
     const data = await response.json();
