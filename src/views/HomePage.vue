@@ -19,7 +19,7 @@
           <Table />
         </div>
       </div>
-      <FloatingButton/>
+      <FloatingButton />
     </ion-content>
   </ion-page>
 </template>
@@ -37,8 +37,14 @@ import FloatingButton from "@/components/FloatingButton.vue";
 </script>
 
 <style scoped>
+ion-title,
+h1 {
+  font-weight: 900;
+  color: var(--ion-color-primary);
+}
+
 #container {
-  margin-top: 28dvh;
+  margin-top: 24dvh;
   text-align: center;
   padding-inline: clamp(1rem, 4.286vw + 0.143rem, 4rem);
 
@@ -47,9 +53,7 @@ import FloatingButton from "@/components/FloatingButton.vue";
   }
 
   h1 {
-    font-weight: 900;
-    font-size: xx-large;
-    color: var(--ion-color-primary);
+    font-size: clamp(2rem, 9.429vw + 0.114rem, 8.6rem);
   }
 }
 </style>

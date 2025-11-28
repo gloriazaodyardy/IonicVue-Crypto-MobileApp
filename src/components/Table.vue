@@ -3,11 +3,11 @@
     <ion-row v-for="item in dataOnDisplay" :key="item.id">
       <ion-col>
         <strong>Rank</strong>
-        <p>{{ item.rank }}</p>
+        <strong>{{ item.rank }}</strong>
       </ion-col>
       <ion-col>
         <strong>{{ item.name }}</strong>
-        <p class="cryptoSymbol">{{ item.symbol }}</p>
+        <p>{{ item.symbol }}</p>
       </ion-col>
       <ion-col>
         <strong>Price (USD)</strong>
@@ -31,7 +31,8 @@ import {
   InfiniteScrollCustomEvent,
 } from "@ionic/vue";
 
-interface cryptoItem { //interface for crypto data item
+interface cryptoItem {
+  //interface for crypto data item
   id: string;
   rank: number;
   name: string;
@@ -46,7 +47,8 @@ const pageSize: number = 10; //number of data to load per scroll
 
 ///// Fetch Crypto Data /////
 
-onMounted(async () => { //fetch crypto data
+onMounted(async () => {
+  //fetch crypto data
   try {
     const response = await fetch(APIURL);
     const data = await response.json();
@@ -90,19 +92,17 @@ const loadMore = (event: InfiniteScrollCustomEvent) => {
 ion-col {
   display: flex;
   flex-direction: column;
-  align-items: center;
   text-align: center;
-  justify-content: center;
+  align-items: center;
   border: solid 1px var(--ion-color-secondary);
-}
-strong {
-  margin: 0.5rem 0;
-  font-weight: bold;
-  color: var(--ion-color-primary);
-}
 
-.cryptoSymbol {
-  font-weight: 900;
-  font-size: 1.2rem;
+  &:first-child > strong:nth-child(2) {
+    margin-top: 1rem;
+  }
+  > strong:first-child {
+    font-weight: bold;
+    margin-block: 1rem;
+    color: var(--ion-color-primary);
+  }
 }
 </style>
