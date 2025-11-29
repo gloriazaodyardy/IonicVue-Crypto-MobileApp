@@ -8,7 +8,7 @@ A mobile application using Vue and Ionic to provide Cryptocurrency from API.
 
 
 ## Screenshots
-![App Screenshot](...)
+![App Screenshot](https://github.com/gloriazaodyardy/IonicVue-Crypto-MobileApp/blob/main/public/webView%20screenshot.png)
 
 
 ## Run Locally
@@ -44,4 +44,6 @@ git clone https://github.com/gloriazaodyardy/IonicVue-Crypto-MobileApp.git
   ionic serve
 
 ```
-> **Note:** Make sure Ionic CLI is installed globally: `npm install -g @ionic/cli`
+> **Note:**
+> - Make sure Ionic CLI is installed globally: `npm install -g @ionic/cli`
+> - Install and configure Java JDK, Gradle, and Android SDK. Gradle is required for building Android apps and should be available in your system's PATH or configured in the Android project folder.
